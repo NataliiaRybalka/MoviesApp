@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
+import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/tasks/completion";
 
 @Component({
   selector: 'app-movies-list',
@@ -16,7 +17,6 @@ export class MoviesListComponent implements OnInit {
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe(value => {
       this.value = value;
-      console.log(typeof this.value)
       this.moviesList = this.value.results;
     })
   }

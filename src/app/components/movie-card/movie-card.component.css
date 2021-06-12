@@ -1,0 +1,20 @@
+.movie {
+  width: 250px;
+  color: white;
+  margin-bottom: 20px;
+}
+.movieSelect {
+  border: none;
+  background: none;
+}
+.moviePoster{
+  width: 200px;
+}
+.movieTitle{
+  word-wrap: break-word;
+  color: white;
+  margin: 20px;
+}
+.movieRatingStar {
+  height: 15px;
+}

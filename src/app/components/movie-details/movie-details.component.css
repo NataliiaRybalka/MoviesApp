@@ -1,0 +1,19 @@
+.movieDetails {
+  margin: 300px;
+  color: white;
+  display: flex;
+  font-size: 20px;
+}
+.moviePoster {
+  height: 500px;
+}
+.movieDetailsBlock {
+  margin-left: 100px;
+}
+.movieDetailsBlock > h1 {
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+.movieRatingStar {
+  width: 20px;
+}
