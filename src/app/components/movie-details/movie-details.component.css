@@ -1,20 +1,20 @@
 .movieDetails {
-  margin: 300px;
+  margin: 200px;
   color: white;
-  display: flex;
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 2;
 }
 .moviePoster {
   height: 500px;
-}
-.movieDetailsBlock {
-  margin-left: 100px;
+  float: left;
+  margin-right: 100px;
 }
 .movieDetailsBlock > h1 {
   font-size: 40px;
-  margin-bottom: 40px;
 }
 .movieRatingStar {
   width: 20px;
+}
+.movieOverview {
+  margin-top: 350px;
 }
