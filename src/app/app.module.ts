@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-
+import {HttpClientModule} from "@angular/common/http";
+import { MoviesListComponent } from './components/movies-list/movies-list.component';
+import {MovieCardComponent} from './components/movie-card/movie-card.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MoviesListComponent,
+    MovieCardComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
