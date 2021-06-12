@@ -7,11 +7,11 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import {MovieCardComponent} from './components/movie-card/movie-card.component';
 import {RouterModule, Routes} from "@angular/router";
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-
+import { GenreBadgeComponent } from './components/genre-badge/genre-badge.component';
 
 const routes: Routes = [
   {path: '', component: MoviesListComponent},
-  {path: ':title', component: MovieDetailsComponent}
+  {path: ':id', component: MovieDetailsComponent}
 ]
 
 @NgModule({
@@ -20,11 +20,12 @@ const routes: Routes = [
     MoviesListComponent,
     MovieCardComponent,
     MovieDetailsComponent,
+    GenreBadgeComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]

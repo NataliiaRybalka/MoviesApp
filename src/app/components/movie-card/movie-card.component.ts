@@ -1,7 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Movie} from "../../models/movie";
 import {ActivatedRoute, Router} from "@angular/router";
-import {relative} from "@angular/compiler-cli/src/ngtsc/file_system";
+import {GenresService} from "../../services/genres.service";
+import {Genre} from "../../models/genre";
 
 @Component({
   selector: 'app-movies-list-card',
@@ -12,13 +13,27 @@ export class MovieCardComponent implements OnInit {
   @Input()
   movie: Movie;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  private value: any;
+  genres: Genre[];
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private genresService: GenresService) {
+  }
 
   ngOnInit(): void {
+    this.genresService.getGenres().subscribe(value => {
+      this.value = value;
+      this.genres = this.value.genres;
+      for (const genre of this.genres) {
+        for (const genreId of this.movie.genre_ids) {
+          if (genreId === genre.id) {
+            this.movie.genre_name = genre.name;
+          }
+        }
+      }
+    })
   }
 
   goToDetails(): void {
-    this.router.navigate([this.movie.title], {relativeTo: this.activatedRoute, state: this.movie});
+    this.router.navigate([this.movie.id], {relativeTo: this.activatedRoute, state: this.movie});
   }
-
 }

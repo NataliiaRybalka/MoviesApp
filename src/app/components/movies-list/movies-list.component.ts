@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
-import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/tasks/completion";
 
 @Component({
   selector: 'app-movies-list',
@@ -9,7 +8,7 @@ import {createLogErrorHandler} from "@angular/compiler-cli/ngcc/src/execution/ta
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  value: any;
+  private value: any;
   moviesList: Movie[];
 
   constructor(private moviesService: MoviesService) { }
