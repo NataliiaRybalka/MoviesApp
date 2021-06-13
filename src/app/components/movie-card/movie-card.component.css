@@ -17,3 +17,6 @@
 .movieRatingStar {
   height: 15px;
 }
+.movieMainInto {
+  min-height: 50px;
+}
