@@ -1,3 +1,7 @@
+.userInfo {
+  display: flex;
+  align-items: center;
+}
 .userImg {
   border-radius: 50%;
   height: 50px;
@@ -7,4 +11,5 @@
 }
 .userName {
   font-size: 20px;
+  margin-left: 10px;
 }
