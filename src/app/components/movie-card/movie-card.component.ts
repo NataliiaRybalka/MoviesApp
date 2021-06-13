@@ -21,13 +21,15 @@ export class MovieCardComponent implements OnInit {
   ngOnInit(): void {
     this.genresService.getGenres().subscribe(value => {
       this.genres = value.genres;
+      let genre_names: string[] = [];
       for (const genre of this.genres) {
         for (const genreId of this.movie.genre_ids) {
           if (genreId === genre.id) {
-            this.movie.genre_name = genre.name;
+            genre_names.push(genre.name);
           }
         }
       }
+      this.movie.genre_name = genre_names.join(', ');
     })
   }
 
