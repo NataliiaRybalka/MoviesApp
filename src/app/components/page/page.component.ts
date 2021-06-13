@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import {Movie} from "../../models/movie";
 import {MoviesListComponent} from "../movies-list/movies-list.component";
@@ -9,13 +9,10 @@ import {MoviesService} from "../../services/movies.service";
   templateUrl: './page.component.html',
   styleUrls: ['./page.component.css']
 })
-export class PageComponent implements OnInit{
+export class PageComponent {
   moviesListComponent: MoviesListComponent;
 
   constructor(private moviesService: MoviesService) { }
-
-  ngOnInit(): void {
-  }
 
   onActive(value: any) {
     this.moviesListComponent = value;

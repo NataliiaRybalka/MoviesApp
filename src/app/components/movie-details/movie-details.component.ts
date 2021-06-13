@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {Movie} from "../../models/movie";
 import {ActivatedRoute, Router} from "@angular/router";
 
@@ -7,7 +7,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   templateUrl: './movie-details.component.html',
   styleUrls: ['./movie-details.component.css']
 })
-export class MovieDetailsComponent implements OnInit {
+export class MovieDetailsComponent {
   movie: Movie;
   img: string;
 
@@ -18,6 +18,4 @@ export class MovieDetailsComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
 }
