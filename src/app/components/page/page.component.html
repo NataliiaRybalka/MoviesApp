@@ -1,15 +1,15 @@
 <div [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">
   <header class="mainHeader">
-    <input type="text" name="searchInput" #searchInput (input)="search(searchInput)">
-    <button (click)="allMovies()">All Movies</button>
-    <button (click)="topMovies()">Top Movies</button>
-    <form [formGroup]="changeThemeForm" class="changeThemeForm">
-      <select [formControlName]="'theme'">
+    <input type="text" name="searchInput" #searchInput (input)="search(searchInput)" placeholder="search">
+    <button (click)="allMovies()" class="moviesButton" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">All Movies</button>
+    <button (click)="topMovies()" class="moviesButton" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">Top Movies</button>
+    <form [formGroup]="changeThemeForm">
+      <select [formControlName]="'theme'" class="changeThemeSelect" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">
         <option value="dark" [selected]="true">dark</option>
         <option value="light">light</option>
       </select>
     </form>
     <app-user></app-user>
   </header>
-  <app-movies-list></app-movies-list>
+  <router-outlet (activate)="onActive($event)"></router-outlet>
 </div>

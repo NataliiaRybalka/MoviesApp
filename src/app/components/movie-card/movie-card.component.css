@@ -1,6 +1,6 @@
 .movie {
   width: 250px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 .movieSelect {
   border: none;
@@ -12,6 +12,7 @@
 .movieTitle{
   word-wrap: break-word;
   margin: 20px;
+  min-height: 40px;
 }
 .movieRatingStar {
   height: 15px;

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
 
@@ -11,6 +11,9 @@ export class MoviesListComponent implements OnInit {
   moviesList: Movie[];
   display: Movie[];
 
+  @Output('activate')
+  activateEvents = new EventEmitter<any>()
+
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
@@ -18,6 +21,10 @@ export class MoviesListComponent implements OnInit {
       this.moviesList = value.results;
       this.display = this.moviesList;
     })
+  }
+
+  lifting(): void {
+    this.activateEvents.emit(this.moviesList)
   }
 
 }

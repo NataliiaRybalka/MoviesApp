@@ -10,12 +10,15 @@ import {MoviesService} from "../../services/movies.service";
   styleUrls: ['./page.component.css']
 })
 export class PageComponent implements OnInit{
-  @ViewChild(MoviesListComponent)
   moviesListComponent: MoviesListComponent;
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
+  }
+
+  onActive(value: any) {
+    this.moviesListComponent = value;
   }
 
   changeThemeForm = new FormGroup({
