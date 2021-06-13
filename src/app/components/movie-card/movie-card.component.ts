@@ -13,7 +13,6 @@ export class MovieCardComponent implements OnInit {
   @Input()
   movie: Movie;
 
-  private value: any;
   genres: Genre[];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private genresService: GenresService) {
@@ -21,8 +20,7 @@ export class MovieCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.genresService.getGenres().subscribe(value => {
-      this.value = value;
-      this.genres = this.value.genres;
+      this.genres = value.genres;
       for (const genre of this.genres) {
         for (const genreId of this.movie.genre_ids) {
           if (genreId === genre.id) {

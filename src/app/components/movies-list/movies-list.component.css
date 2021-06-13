@@ -1,5 +1,6 @@
 .moviesList {
-  margin: 150px;
+  padding: 150px;
+  padding-right: 0;
   text-align: center;
   display: flex;
   justify-content: space-around;

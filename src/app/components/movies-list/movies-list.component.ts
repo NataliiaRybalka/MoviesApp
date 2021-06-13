@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-movies-list',
@@ -8,16 +9,13 @@ import {Movie} from "../../models/movie";
   styleUrls: ['./movies-list.component.css']
 })
 export class MoviesListComponent implements OnInit {
-  private value: any;
   moviesList: Movie[];
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe(value => {
-      this.value = value;
-      this.moviesList = this.value.results;
+      this.moviesList = value.results;
     })
   }
-
 }

@@ -7,7 +7,8 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import {MovieCardComponent} from './components/movie-card/movie-card.component';
 import {RouterModule, Routes} from "@angular/router";
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { GenreBadgeComponent } from './components/genre-badge/genre-badge.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { UserComponent } from './components/user/user.component';
 
 const routes: Routes = [
   {path: '', component: MoviesListComponent},
@@ -20,12 +21,13 @@ const routes: Routes = [
     MoviesListComponent,
     MovieCardComponent,
     MovieDetailsComponent,
-    GenreBadgeComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
