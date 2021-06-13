@@ -20,16 +20,4 @@ export class MoviesListComponent implements OnInit {
     })
   }
 
-  search(input: HTMLInputElement): Movie[] {
-    return this.display = this.moviesService.getMoviesByTitle(input.value, this.moviesList);
-  }
-
-  topMovies(): Movie[] {
-    return this.display = this.moviesService.getTopMovies(this.moviesList);
-  }
-
-  allMovies(): Movie[] {
-    return this.display = this.moviesList;
-  }
-
 }
