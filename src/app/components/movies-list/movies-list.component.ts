@@ -10,12 +10,19 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class MoviesListComponent implements OnInit {
   moviesList: Movie[];
+  display: Movie[];
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe(value => {
       this.moviesList = value.results;
+      this.display = this.moviesList;
     })
   }
+
+  search(input: HTMLInputElement) {
+    this.display = this.moviesService.getMoviesByTitle(input.value, this.moviesList);
+  }
+
 }

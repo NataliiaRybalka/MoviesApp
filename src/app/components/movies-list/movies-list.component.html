@@ -1,5 +1,6 @@
 <div>
+  <input type="text" name="getMovie" #input (input)="search(input)">
 <main class="moviesList">
-  <app-movies-list-card *ngFor="let movie of moviesList" [movie]="movie"></app-movies-list-card>
+  <app-movies-list-card *ngFor="let movie of display" [movie]="movie"></app-movies-list-card>
 </main>
 </div>

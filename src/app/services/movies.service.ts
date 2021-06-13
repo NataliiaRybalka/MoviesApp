@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Value} from "../models/value";
+import {Movie} from "../models/movie";
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +19,9 @@ export class MoviesService {
       }
     })
   }
+
+  getMoviesByTitle(title: string, movies: Movie[]): Movie[] {
+    return movies.filter(m => m.original_title.includes(title))
+  }
+
 }
