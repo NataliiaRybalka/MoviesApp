@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
-import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-movies-list',
@@ -21,8 +20,16 @@ export class MoviesListComponent implements OnInit {
     })
   }
 
-  search(input: HTMLInputElement) {
-    this.display = this.moviesService.getMoviesByTitle(input.value, this.moviesList);
+  search(input: HTMLInputElement): Movie[] {
+    return this.display = this.moviesService.getMoviesByTitle(input.value, this.moviesList);
+  }
+
+  topMovies(): Movie[] {
+    return this.display = this.moviesService.getTopMovies(this.moviesList);
+  }
+
+  allMovies(): Movie[] {
+    return this.display = this.moviesList;
   }
 
 }

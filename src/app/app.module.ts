@@ -9,6 +9,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { UserComponent } from './components/user/user.component';
+import { PageComponent } from './components/page/page.component';
 
 const routes: Routes = [
   {path: '', component: MoviesListComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
     MovieCardComponent,
     MovieDetailsComponent,
     UserComponent,
+    PageComponent,
   ],
   imports: [
     BrowserModule,

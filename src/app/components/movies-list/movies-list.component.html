@@ -1,5 +1,7 @@
 <div>
-  <input type="text" name="getMovie" #input (input)="search(input)">
+  <input type="text" name="searchInput" #searchInput (input)="search(searchInput)">
+  <button (click)="allMovies()">All Movies</button>
+  <button (click)="topMovies()">Top Movies</button>
 <main class="moviesList">
   <app-movies-list-card *ngFor="let movie of display" [movie]="movie"></app-movies-list-card>
 </main>

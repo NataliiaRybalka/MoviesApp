@@ -1,0 +1,12 @@
+<div [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">
+  <header class="mainHeader">
+    <form [formGroup]="changeThemeForm" class="changeThemeForm">
+      <select [formControlName]="'theme'">
+        <option value="dark" [selected]="true">dark</option>
+        <option value="light">light</option>
+      </select>
+    </form>
+    <app-user></app-user>
+  </header>
+  <router-outlet></router-outlet>
+</div>
