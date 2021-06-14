@@ -3,10 +3,10 @@
     <app-poster-preview [poster]="movie.poster_path" [posterClass]="'posterMain'"></app-poster-preview>
   </button>
 
-  <h3 class="movieTitle">{{movie.original_title}}</h3>
-  <p class="movieMainInto">
-    <app-star-rating [vote]="movie.vote_average"></app-star-rating> |
-    <span>{{movie.release_date}}</span> <br>
-    <app-genre-badge [genreIds]="movie.genre_ids"></app-genre-badge>
-  </p>
+    <h3 class="movieTitle">{{movie.original_title}}</h3>
+    <p class="movieMainInto">
+      <app-star-rating [vote]="movie.vote_average"></app-star-rating> |
+      <span>{{movie.release_date}}</span> <br>
+      <app-genre-badge [genreIds]="movie.genre_ids"></app-genre-badge>
+    </p>
 </div>
