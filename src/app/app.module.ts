@@ -11,6 +11,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { UserComponent } from './components/user/user.component';
 import { PageComponent } from './components/page/page.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
+import { PosterPreviewComponent } from './components/poster-preview/poster-preview.component';
 
 const routes: Routes = [
   {path: '', component: MoviesListComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
     UserComponent,
     PageComponent,
     StarRatingComponent,
+    PosterPreviewComponent,
   ],
   imports: [
     BrowserModule,

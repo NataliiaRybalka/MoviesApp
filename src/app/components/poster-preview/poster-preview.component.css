@@ -1,0 +1,8 @@
+.posterMain {
+  width: 200px;
+}
+.posterDetails {
+  height: 500px;
+  float: left;
+  margin-right: 100px;
+}

@@ -6,9 +6,6 @@
   border: none;
   background: none;
 }
-.moviePoster{
-  width: 200px;
-}
 .movieTitle{
   word-wrap: break-word;
   margin: 20px;

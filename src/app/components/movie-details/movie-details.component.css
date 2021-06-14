@@ -3,11 +3,6 @@
   font-size: 20px;
   line-height: 2;
 }
-.moviePoster {
-  height: 500px;
-  float: left;
-  margin-right: 100px;
-}
 .movieDetailsBlock > h1 {
   font-size: 40px;
 }

@@ -1,6 +1,6 @@
 <div class="movie">
   <button class="movieSelect" (click)="goToDetails()">
-    <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt={{movie.title}} class="moviePoster">
+    <app-poster-preview [poster]="movie.poster_path" [posterClass]="'posterMain'"></app-poster-preview>
   </button>
 
   <h3 class="movieTitle">{{movie.original_title}}</h3>
