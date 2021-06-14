@@ -5,8 +5,8 @@
     <button (click)="topMovies()" class="moviesButton" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">Top Movies</button>
     <form [formGroup]="changeThemeForm">
       <select [formControlName]="'theme'" class="changeThemeSelect" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">
-        <option value="dark" [selected]="true">dark</option>
-        <option value="light">light</option>
+        <option value="dark" [selected]="true" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">dark</option>
+        <option value="light" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">light</option>
       </select>
     </form>
     <app-user></app-user>
