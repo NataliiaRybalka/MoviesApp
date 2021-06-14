@@ -7,8 +7,6 @@ import {Observable} from "rxjs";
 })
 export class CustomInterceptorService implements HttpInterceptor{
 
-  constructor() { }
-
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let clone = req.clone({
       setHeaders: {
