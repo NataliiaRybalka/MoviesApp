@@ -11,22 +11,20 @@ export class GenreBadgeComponent implements OnInit {
   genres: Genre[];
   @Input()
   genreIds: number[];
-  genreNames: string;
+  genreNames: string[] = [];
 
   constructor(private genresService: GenresService) { }
 
   ngOnInit(): void {
     this.genresService.getGenres().subscribe(value => {
       this.genres = value.genres;
-      let genre_names: string[] = [];
       for (const genre of this.genres) {
         for (const genreId of this.genreIds) {
           if (genreId === genre.id) {
-            genre_names.push(genre.name);
+            this.genreNames.push(genre.name, ' ');
           }
         }
       }
-      this.genreNames = genre_names.join(', ');
     })
   }
 
