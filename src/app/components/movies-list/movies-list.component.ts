@@ -13,7 +13,7 @@ export class MoviesListComponent implements OnInit {
   display: Movie[];
 
   @Output('activate')
-  activateEvents = new EventEmitter<any>()
+  activateEvents = new EventEmitter<Movie[]>()
 
   constructor(private moviesService: MoviesService, private activatedRoute: ActivatedRoute) { }
 

@@ -13,7 +13,7 @@ export class PageComponent {
   moviesListComponent: MoviesListComponent;
   headerClass = 'headerShow';
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService) {  }
 
   onActive(value: any) {
     this.moviesListComponent = value;

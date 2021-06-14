@@ -11,12 +11,8 @@ export class MovieDetailsComponent{
   movie: Movie;
   img: string;
 
-  stars = [1, 2, 3, 4, 5];
-  selected: number;
-  hover: number;
-
   @Output('activate')
-  activateEvents = new EventEmitter<any>()
+  activateEvents = new EventEmitter<string>()
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(params => {
