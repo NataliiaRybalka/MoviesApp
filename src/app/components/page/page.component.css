@@ -29,3 +29,9 @@
   border: none;
   background: inherit;
 }
+.headerHide {
+  visibility: hidden;
+}
+.headerShow {
+  visibility: visible;
+}

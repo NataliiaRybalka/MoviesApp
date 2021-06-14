@@ -1,9 +1,13 @@
 <div [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">
   <header class="mainHeader">
-    <input type="text" name="searchInput" #searchInput (input)="search(searchInput)" placeholder="search">
-    <button (click)="allMovies()" class="moviesButton" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">All Movies</button>
-    <button (click)="topMovies()" class="moviesButton" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">Top Movies</button>
-    <form [formGroup]="changeThemeForm">
+      <input [ngClass]="headerClass" type="text" name="searchInput" #searchInput (input)="search(searchInput)" placeholder="search">
+    <div [ngClass]="headerClass">
+      <button (click)="allMovies()" class="moviesButton" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">All Movies</button>
+    </div>
+    <div [ngClass]="headerClass">
+      <button (click)="topMovies()" class="moviesButton" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">Top Movies</button>
+    </div>
+    <form [formGroup]="changeThemeForm" [ngClass]="headerClass">
       <select [formControlName]="'theme'" class="changeThemeSelect" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">
         <option value="dark" [selected]="true" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">dark</option>
         <option value="light" [ngClass]="!changeThemeForm.controls.theme.value ? 'dark' : changeThemeForm.controls.theme.value">light</option>

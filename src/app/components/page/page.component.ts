@@ -11,11 +11,17 @@ import {MoviesService} from "../../services/movies.service";
 })
 export class PageComponent {
   moviesListComponent: MoviesListComponent;
+  headerClass = 'headerShow';
 
   constructor(private moviesService: MoviesService) { }
 
   onActive(value: any) {
     this.moviesListComponent = value;
+    if (value.activatedRoute.snapshot.routeConfig.path.length === 0) {
+      this.headerClass = 'headerShow';
+    } else {
+      this.headerClass = 'headerHide';
+    }
   }
 
   changeThemeForm = new FormGroup({

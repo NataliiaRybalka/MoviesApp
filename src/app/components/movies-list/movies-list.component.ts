@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../models/movie";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-movies-list',
@@ -14,7 +15,7 @@ export class MoviesListComponent implements OnInit {
   @Output('activate')
   activateEvents = new EventEmitter<any>()
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe(value => {
@@ -25,6 +26,7 @@ export class MoviesListComponent implements OnInit {
 
   lifting(): void {
     this.activateEvents.emit(this.moviesList)
+    this.activatedRoute.snapshot.routeConfig?.path;
   }
 
 }
