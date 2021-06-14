@@ -21,7 +21,7 @@ export class MoviesService {
   }
 
   getTopMovies(movies: Movie[]): Movie[] {
-    return movies.filter(movie => movie.vote_average > 8)
+    return movies.filter(movie => movie.vote_average >= 8)
   }
 
 }
