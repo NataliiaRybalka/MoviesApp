@@ -13,24 +13,24 @@ export class MovieCardComponent implements OnInit {
   @Input()
   movie: Movie;
 
-  genres: Genre[];
+  // genres: Genre[];
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private genresService: GenresService) {
   }
 
   ngOnInit(): void {
-    this.genresService.getGenres().subscribe(value => {
-      this.genres = value.genres;
-      let genre_names: string[] = [];
-      for (const genre of this.genres) {
-        for (const genreId of this.movie.genre_ids) {
-          if (genreId === genre.id) {
-            genre_names.push(genre.name);
-          }
-        }
-      }
-      this.movie.genre_name = genre_names.join(', ');
-    })
+    // this.genresService.getGenres().subscribe(value => {
+    //   this.genres = value.genres;
+    //   let genre_names: string[] = [];
+    //   for (const genre of this.genres) {
+    //     for (const genreId of this.movie.genre_ids) {
+    //       if (genreId === genre.id) {
+    //         genre_names.push(genre.name);
+    //       }
+    //     }
+    //   }
+    //   this.movie.genre_name = genre_names.join(', ');
+    // })
   }
 
   goToDetails(): void {

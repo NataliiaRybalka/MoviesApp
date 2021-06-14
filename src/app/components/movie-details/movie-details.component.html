@@ -3,7 +3,7 @@
   <div class="movieDetailsBlock">
     <h1>{{movie.original_title}}</h1>
     <p>
-      <span>{{movie.genre_name}}</span> <br>
+      <app-genre-badge [genreIds]="movie.genre_ids"></app-genre-badge> <br>
       <app-star-rating [vote]="movie.vote_average"></app-star-rating> <br>
       <span>{{movie.release_date}}</span>
     </p>

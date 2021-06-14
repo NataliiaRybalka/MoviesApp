@@ -12,6 +12,7 @@ import { UserComponent } from './components/user/user.component';
 import { PageComponent } from './components/page/page.component';
 import { StarRatingComponent } from './components/star-rating/star-rating.component';
 import { PosterPreviewComponent } from './components/poster-preview/poster-preview.component';
+import { GenreBadgeComponent } from './components/genre-badge/genre-badge.component';
 
 const routes: Routes = [
   {path: '', component: MoviesListComponent},
@@ -28,6 +29,7 @@ const routes: Routes = [
     PageComponent,
     StarRatingComponent,
     PosterPreviewComponent,
+    GenreBadgeComponent,
   ],
   imports: [
     BrowserModule,

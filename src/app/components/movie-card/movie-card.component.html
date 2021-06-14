@@ -7,6 +7,6 @@
   <p class="movieMainInto">
     <app-star-rating [vote]="movie.vote_average"></app-star-rating> |
     <span>{{movie.release_date}}</span> <br>
-    <span>{{movie.genre_name}}</span>
+    <app-genre-badge [genreIds]="movie.genre_ids"></app-genre-badge>
   </p>
 </div>
