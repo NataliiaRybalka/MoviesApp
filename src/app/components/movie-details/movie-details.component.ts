@@ -11,11 +11,14 @@ export class MovieDetailsComponent {
   movie: Movie;
   img: string;
 
+  stars = [1, 2, 3, 4, 5];
+  selected: number;
+  hover: number;
+
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe(params => {
       this.movie = this.router.getCurrentNavigation()?.extras.state as Movie;
       this.img = 'https://image.tmdb.org/t/p/original' + this.movie.poster_path;
     })
   }
-
 }

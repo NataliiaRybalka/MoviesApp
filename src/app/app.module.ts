@@ -10,6 +10,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import {ReactiveFormsModule} from "@angular/forms";
 import { UserComponent } from './components/user/user.component';
 import { PageComponent } from './components/page/page.component';
+import { StarRatingComponent } from './components/star-rating/star-rating.component';
 
 const routes: Routes = [
   {path: '', component: MoviesListComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
     MovieDetailsComponent,
     UserComponent,
     PageComponent,
+    StarRatingComponent,
   ],
   imports: [
     BrowserModule,
